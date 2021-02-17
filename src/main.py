@@ -10,6 +10,9 @@ def create_foreground(api: sly.Api, task_id, context, state, app_logger):
     threshold = state["threshold"]
     rewrite = state["rewrite"]
     image = api.image.download_np(image_id, keep_alpha=True)
+    print(image.shape)
+    x = 10
+    x += 1
     #sly.image.write("abc.png", image, remove_alpha_channel=False)
 
     pass
