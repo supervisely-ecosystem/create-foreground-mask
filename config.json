@@ -1,0 +1,17 @@
+{
+  "name": "Create foreground mask",
+  "type": "app",
+  "categories": [
+    "images",
+    "alpha channel"
+  ],
+  "description": "Create foreground object from alpha channel of image",
+  "docker_image": "supervisely/base-py-sdk:6.1.52",
+  "main_script": "src/main.py",
+  "gui_template": "src/gui.html",
+  "task_location": "application_sessions",
+  "isolate": true,
+  "integrated_into": ["image_annotation_tool"],
+  "icon": "https://img.icons8.com/nolan/100/opacity.png",
+  "icon_background": "#FFFFFF"
+}
