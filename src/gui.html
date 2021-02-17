@@ -1,3 +1,28 @@
-<div>
-    <div>Select class for foreground object</div>
+<div class="ml5 mr5">
+    <div><b>ACTIONS:</b></div>
+    <div class="fflex" style="align-items: baseline;">
+        <el-button type="success" size="mini" class="mt5" style="margin-bottom: 15px;"
+                   :disabled="state.classes === ''"
+                   @click="command('create_foreground')"
+        >
+            <i class="zmdi zmdi-plus-circle mr5"></i>Create foreground
+        </el-button>
+        <div class="ml10" v-show="state.classes === ''" style="color: red">Please, select class</div>
+    </div>
+
+
+    <div><b>SETTINGS:</b></div>
+    <div class="mt5">Select class for foreground objects</div>
+    {{state.classes}}
+    <sly-select-class
+            :project-id="context.projectId"
+            :classes.sync="state.classes"
+            :options="{showLabel: false}">
+    </sly-select-class>
+
+    <div class="mt15">Define alpha threshold (0 - transparent, 255 - no transparency)</div>
+    <el-slider v-model="state.threshold" :min="0" :max="255" show-input></el-slider>
+
+    <div><el-checkbox class="mt15 mr5" v-model="state.rewrite"></el-checkbox>Rewrite existing foregrounds</div>
+
 </div>
