@@ -1,7 +1,5 @@
 import supervisely_lib as sly
 
-app: sly.AppService = sly.AppService()
-
 
 @app.callback("create_foreground")
 @sly.timeit
@@ -19,15 +17,7 @@ def create_foreground(api: sly.Api, task_id, context, state, app_logger):
 
 
 def main():
-    data = {
-
-    }
-    state = {
-        "threshold": 255,
-        "rewrite": True,
-        "classes": "foreground" #@TODO: for debug
-    }
-    app.run(data=data, state=state)
+    x = 10
 
 
 # @TODO: size: mini - sly-select-class

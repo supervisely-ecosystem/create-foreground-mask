@@ -1,0 +1,11 @@
+<div>
+    <sly-field title="Foreground threshold"
+               description="Foreground mask consists of pixels with opacity >= threshold.
+                            Note: 0 - 100% transparent, 255 - opaque (no transparency)">
+        <el-input-number v-model="state.threshold" :min="0" :max="255"></el-input-number>
+    </sly-field>
+    <sly-field title="Mask semi-transparent pixels"
+               description="Create additional mask for semi-transparent pixels (0 < opacity < 255) for visualization purposes">
+        <el-checkbox v-model="state.fuzzy">create additional mask</el-checkbox>
+    </sly-field>
+</div>
