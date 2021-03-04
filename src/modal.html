@@ -1,4 +1,10 @@
 <div>
+    <b>Brief overview:</b>
+    <ul>
+        <li>Foreground Masks will be added to the current annotations (inplace)</li>
+        <li>Bitmap classes with names <i class="zmdi zmdi-circle mr5" style="color: blue"></i><b>Foreground</b> and
+            <i class="zmdi zmdi-circle mr5" style="color: gray"></i><b>Fuzzy</b> will be added to the current project</li>
+    </ul>
     <sly-field title="Foreground threshold"
                description="Foreground mask consists of pixels with opacity >= threshold.
                             Note: 0 - 100% transparent, 255 - opaque (no transparency)">
@@ -6,6 +12,6 @@
     </sly-field>
     <sly-field title="Mask semi-transparent pixels"
                description="Create additional mask for semi-transparent pixels (0 < opacity < 255) for visualization purposes">
-        <el-checkbox v-model="state.fuzzy">create additional mask</el-checkbox>
+        <el-checkbox v-model="state.fuzzy">create fuzzy mask</el-checkbox>
     </sly-field>
 </div>
