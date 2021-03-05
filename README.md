@@ -23,3 +23,16 @@
 App adds `foreground` and `fuzzy` classes to the project and then for every image with alpha channel creates two masks: foreground object (pixels with opacity >= threshold) and fuzzy object (semi-transparent pixels - with opacity in range [1, 254]). 
 
 Usage example: foreground objects (blue) can be used during research with synthetic training data, fuzzy objects (gray) are helpful for analyzing quality of alpha channel. 
+
+
+# How To Use
+
+1. Add app from ecosystem to your team
+2. Prepare project with alpha-channel images. Or add [example project](https://ecosystem.supervise.ly/projects/images-with-alpha-channel) from ecosystem.
+   
+<img  data-key="sly-module-link" data-module-slug="supervisely-ecosystem/images-with-alpha-channel" src="https://i.imgur.com/2XZyVXy.png" width="300"/>
+
+3. Run it from context menu of images project
+
+<img src="https://i.imgur.com/K1h6P4K.png" width="600"/>
+
