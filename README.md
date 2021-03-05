@@ -24,6 +24,7 @@ App adds `foreground` and `fuzzy` classes to the project and then for every imag
 
 Usage example: foreground objects (blue) can be used during research with synthetic training data, fuzzy objects (gray) are helpful for analyzing quality of alpha channel. 
 
+<img src="https://media4.giphy.com/media/E5cYcp1zHcTesS0ef7/giphy.gif"/>
 
 # How To Use
 
@@ -40,4 +41,4 @@ Usage example: foreground objects (blue) can be used during research with synthe
 
 <img src="https://i.imgur.com/y1IeZ54.png" width="450"/>
 
-4. What until task finished. Masks will be added to existing project on top of existing annotations. If image doesn't have alpha channel, app will print corresponding warning to task log. 
+4. What until task finished. Masks will be added to existing project on top of existing annotations. If image doesn't have alpha channel, app will print corresponding warning to task log.
