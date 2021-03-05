@@ -36,3 +36,4 @@ Usage example: foreground objects (blue) can be used during research with synthe
 
 <img src="https://i.imgur.com/K1h6P4K.png" width="600"/>
 
+4. What until task finished. Masks will be added to existing project on top of existing annotations. 
