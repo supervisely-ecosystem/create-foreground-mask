@@ -36,4 +36,8 @@ Usage example: foreground objects (blue) can be used during research with synthe
 
 <img src="https://i.imgur.com/K1h6P4K.png" width="600"/>
 
+4. (Optional) change input parameters: threshold and fuzzy flag
+
+<img src="https://i.imgur.com/y1IeZ54.png" width="450"/>
+
 4. What until task finished. Masks will be added to existing project on top of existing annotations. If image doesn't have alpha channel, app will print corresponding warning to task log. 
