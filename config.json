@@ -15,8 +15,8 @@
     "fuzzy": true
   },
   "isolate": true,
-  "icon": "https://i.imgur.com/stTmpyT.png",
-  "icon_background": "#FFFFFF",
+  "icon": "https://i.imgur.com/ngpqzh7.png",
+  "icon_cover": true,
   "context_menu": {
     "target": ["images_project"],
     "context_category": "Alpha Channel"
