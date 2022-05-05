@@ -19,7 +19,10 @@
   "icon": "https://i.imgur.com/WPXor5h.png",
   "icon_cover": true,
   "context_menu": {
-    "target": ["images_project"],
+    "target": [
+      "images_project"
+    ],
     "context_category": "Alpha Channel"
-  }
+  },
+  "poster": "https://i.imgur.com/XhsFGR3.png"
 }
