@@ -1,5 +1,5 @@
 <div align="center" markdown>
-<img src="https://i.imgur.com/XhsFGR3.png"/>
+<img src="https://user-images.githubusercontent.com/48245050/182598346-c78d96d0-cc59-4c97-9c36-fe0a39cb57cf.png"/>
 
 # Create Foreground Mask
 
