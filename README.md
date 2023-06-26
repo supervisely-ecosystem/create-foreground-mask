@@ -23,21 +23,21 @@ App adds `foreground` and `fuzzy` classes to the project and then for every imag
 
 Usage example: foreground objects (blue) can be used during research with synthetic training data, fuzzy objects (gray) are helpful for analyzing quality of alpha channel. 
 
-<img src="https://media4.giphy.com/media/E5cYcp1zHcTesS0ef7/giphy.gif"/>
+<img src="media/overview.gif"/>
 
 # How To Use
 
 1. Add app from ecosystem to your team
 2. Prepare project with alpha-channel images. Or add [example project](https://ecosystem.supervise.ly/projects/images-with-alpha-channel) from ecosystem.
    
-<img  data-key="sly-module-link" data-module-slug="supervisely-ecosystem/images-with-alpha-channel" src="https://i.imgur.com/2XZyVXy.png" width="300"/>
+<img  data-key="sly-module-link" data-module-slug="supervisely-ecosystem/images-with-alpha-channel" src="media/ht2.png" width="300"/>
 
 3. Run it from context menu of images project
 
-<img src="https://i.imgur.com/K1h6P4K.png" width="600"/>
+<img src="media/ht3.png" width="600"/>
 
 4. (Optional) change input parameters: threshold and fuzzy flag
 
-<img src="https://i.imgur.com/y1IeZ54.png" width="450"/>
+<img src="media/ht4.png" width="450"/>
 
-4. What until task finished. Masks will be added to existing project on top of existing annotations. If image doesn't have alpha channel, app will print corresponding warning to task log.
+5. What until task finished. Masks will be added to existing project on top of existing annotations. If image doesn't have alpha channel, app will print corresponding warning to task log.
