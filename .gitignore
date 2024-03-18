@@ -4,3 +4,5 @@
 venv
 supervisely_lib
 src/__pycache__
+.venv
+debug_data
