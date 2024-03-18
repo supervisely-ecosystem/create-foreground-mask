@@ -1,12 +1,18 @@
 import os
 import numpy as np
-import supervisely_lib as sly
+import supervisely as sly
+
+from dotenv import load_dotenv
+
+if sly.is_development():
+    load_dotenv("debug.env")
+    load_dotenv(os.path.expanduser("~/supervisely.env"))
 
 app = sly.AppService()
 
-team_id = int(os.environ['context.teamId'])
-workspace_id = int(os.environ['context.workspaceId'])
-project_id = int(os.environ["modal.state.slyProjectId"])
+team_id = sly.env.team_id()
+workspace_id = sly.env.workspace_id()
+project_id = sly.env.project_id()
 
 threshold = int(os.environ["modal.state.threshold"])
 need_fuzzy = sly.env.flag_from_env(os.environ["modal.state.fuzzy"])
@@ -23,8 +29,10 @@ def create_classes(api: sly.Api):
         if cls is None:
             meta = meta.add_obj_class(target_class)
         elif cls != target_class:
-            raise RuntimeError(f"Project already has class '{cls.name}' with shape {cls.geometry_type.geometry_name()}. "
-                               f"Shape conflict: shape should be of typy {target_class.geometry_type.geometry_name()}")
+            raise RuntimeError(
+                f"Project already has class '{cls.name}' with shape {cls.geometry_type.geometry_name()}. "
+                f"Shape conflict: shape should be of typy {target_class.geometry_type.geometry_name()}"
+            )
         return meta
 
     global meta
@@ -66,14 +74,16 @@ def create_foreground(api: sly.Api, task_id, context, state, app_logger):
             ids = []
             names = []
             local_paths = []
-            for info in  batch_infos:
+            for info in batch_infos:
                 ids.append(info.id)
                 names.append(info.name)
                 local_paths.append(os.path.join(app.data_dir, info.name))
 
             api.image.download_paths(dataset.id, ids, local_paths)
             anns_infos = api.annotation.download_batch(dataset.id, ids)
-            anns = [sly.Annotation.from_json(info.annotation, meta) for info in anns_infos]
+            anns = [
+                sly.Annotation.from_json(info.annotation, meta) for info in anns_infos
+            ]
 
             res_ids = []
             res_anns = []
@@ -81,10 +91,14 @@ def create_foreground(api: sly.Api, task_id, context, state, app_logger):
                 img = sly.image.read(img_path, remove_alpha_channel=False)
                 if len(img.shape) == 3:
                     if img.shape[2] != 4:
-                        sly.logger.warn(f"Image {img_name} (id={img_id}) does not have alpha channel, will be skipped")
+                        sly.logger.warn(
+                            f"Image {img_name} (id={img_id}) does not have alpha channel, will be skipped"
+                        )
                         continue
                 else:
-                    sly.logger.warn(f"Image {img_name} (id={img_id}) does not have alpha channel, will be skipped")
+                    sly.logger.warn(
+                        f"Image {img_name} (id={img_id}) does not have alpha channel, will be skipped"
+                    )
                     continue
 
                 fg, fuzzy = get_masks(img)
@@ -106,15 +120,18 @@ def create_foreground(api: sly.Api, task_id, context, state, app_logger):
 
 
 def main():
-    sly.logger.info("Script arguments", extra={
-        "TEAM_ID": team_id,
-        "WORKSPACE_ID": workspace_id,
-        "PROJECT_ID": project_id,
-        "THRESHOLD": threshold,
-        "NEED_FUZZY": need_fuzzy
-    })
+    sly.logger.info(
+        "Script arguments",
+        extra={
+            "TEAM_ID": team_id,
+            "WORKSPACE_ID": workspace_id,
+            "PROJECT_ID": project_id,
+            "THRESHOLD": threshold,
+            "NEED_FUZZY": need_fuzzy,
+        },
+    )
     app.run(initial_events=[{"command": "create_foreground"}])
 
 
 if __name__ == "__main__":
-    sly.main_wrapper("main", main)
+    sly.main_wrapper("main", main, log_for_agent=False)
