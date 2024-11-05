@@ -9,11 +9,11 @@
 </p>
 
 
-[![](https://img.shields.io/badge/supervisely-ecosystem-brightgreen)](https://ecosystem.supervise.ly/apps/create-foreground-mask)
-[![](https://img.shields.io/badge/slack-chat-green.svg?logo=slack)](https://supervise.ly/slack)
+[![](https://img.shields.io/badge/supervisely-ecosystem-brightgreen)](https://ecosystem.supervisely.com/apps/create-foreground-mask)
+[![](https://img.shields.io/badge/slack-chat-green.svg?logo=slack)](https://supervisely.com/slack)
 ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/supervisely-ecosystem/create-foreground-mask)
-[![views](https://app.supervise.ly/img/badges/views/supervisely-ecosystem/create-foreground-mask.png)](https://supervise.ly)
-[![runs](https://app.supervise.ly/img/badges/runs/supervisely-ecosystem/create-foreground-mask.png)](https://supervise.ly)
+[![views](https://app.supervisely.com/img/badges/views/supervisely-ecosystem/create-foreground-mask.png)](https://supervisely.com)
+[![runs](https://app.supervisely.com/img/badges/runs/supervisely-ecosystem/create-foreground-mask.png)](https://supervisely.com)
 
 </div>
 
@@ -28,7 +28,7 @@ Usage example: foreground objects (blue) can be used during research with synthe
 # How To Use
 
 1. Add app from ecosystem to your team
-2. Prepare project with alpha-channel images. Or add [example project](https://ecosystem.supervise.ly/projects/images-with-alpha-channel) from ecosystem.
+2. Prepare project with alpha-channel images. Or add [example project](https://ecosystem.supervisely.com/projects/images-with-alpha-channel) from ecosystem.
    
 <img  data-key="sly-module-link" data-module-slug="supervisely-ecosystem/images-with-alpha-channel" src="https://i.imgur.com/2XZyVXy.png" width="300"/>
 
